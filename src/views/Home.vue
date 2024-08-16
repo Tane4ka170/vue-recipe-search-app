@@ -15,12 +15,6 @@ onMounted(async () => {
 
 <template>
   <div class="flex p-8 flex-col">
-    <input
-      type="text"
-      class="rounded border-2 border-slate-200 w-full"
-      placeholder="Search for meals"
-    />
-
     <div class="flex gap-2 justify-center mt-2">
       <RouterLink
         :to="{ name: 'byLetter', params: { letter } }"
