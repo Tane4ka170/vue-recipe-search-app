@@ -4,5 +4,7 @@ import Navbar from "../components/Navbar.vue";
 
 <template>
   <navbar />
-  <main><router-view /></main>
+  <main>
+    <div class="max-w-[1200px] mx-auto"><router-view /></div>
+  </main>
 </template>
