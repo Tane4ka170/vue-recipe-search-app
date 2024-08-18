@@ -10,7 +10,11 @@ const meals = computed(() => store.state.searchedMeals);
 const route = useRoute();
 
 function searchMeals() {
-  store.dispatch("searchMeals", keyword.value);
+  if (keyword.value) {
+    store.dispatch("searchMeals", keyword.value);
+  } else {
+    store.commit("setSearchedMeals", []);
+  }
 }
 
 onMounted(() => {
@@ -26,7 +30,7 @@ onMounted(() => {
     <input
       type="text"
       v-model="keyword"
-      class="rounded border-2 border-slate-200 w-full bg-white"
+      class="rounded border-2 border-slate-200 w-full bg-white mb-3 focus:ring-gray-500"
       placeholder="Search for meals"
       @change="searchMeals"
     />
